@@ -1,17 +1,18 @@
 import { NavLink } from "react-router-dom";
 
-
 const Navbar = () => {
   return (
-    <section className="border-b border-gray-500/20 px-5 sticky top-0">
-      <div className="flex justify-between w-full h-15 items-center">
+    <section className="border-b border-gray-500/20 px-5 sticky top-0 bg-blur backdrop-blur-lg z-500">
+      <div className="flex justify-between h-15 items-center">
         <NavLink to="/">
           <h1 className="font-bold text-3xl">
-          Briefly
-          <span className="text-teal-400">.</span>
-        </h1>
+            Briefly
+            <span className="text-teal-400">.</span>
+          </h1>
         </NavLink>
-        <button className="text-lg font-semibold bg-white/5 hover:bg-white/10 px-4 py-2 cursor-pointer rounded-md transition">Sign in</button>
+        <button className="text-sm font-semibold bg-white/5 hover:bg-teal-300/50 px-4 active:scale-[0.97] active:bg-teal-500 py-2 cursor-pointer rounded-md transition-all duration-150">
+          Sign in
+        </button>
       </div>
     </section>
   );
