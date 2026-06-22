@@ -11,6 +11,9 @@ const Hero = () => {
     try {
       await signInWithPopup(auth, provider);
       navigate("/dashboard");
+
+      
+
     } catch (error) {
       console.error("Sign in failed:", error);
     }
@@ -21,7 +24,7 @@ const Hero = () => {
       <div className="hero-glow" />
       <div className="hero-grain" />
       <div className="relative z-10 min-h-screen flex flex-col justify-center items-center">
-        <div className="flex gap-2 border py-3 px-5 bg-white/10 border-white/10 rounded-full mb-5">
+        <div className="flex gap-2 py-3 px-5 bg-white/10 border-white/10 rounded-full mb-5">
           <Sparkles className="size-4 text-teal-400" />
           <p className="text-sm text-teal-400">Ai-powered meeting notes</p>
         </div>
