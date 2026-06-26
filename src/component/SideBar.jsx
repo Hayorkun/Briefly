@@ -9,13 +9,11 @@ const SideBar = () => {
     color: isActive ? "white" : "gray",
   });
 
-  console.log(user)
-
   return (
     <section>
       <div className="grid grid-cols-12">
         <div className="sticky top-0 h-screen col-span-3 lg:col-span-2">
-          <div className="py-5 px-3 h-screen bg-black flex flex-col justify-between">
+          <div className="py-5 px-3 lg:px-7 h-screen bg-black flex flex-col justify-between">
             <div className="flex flex-col">
               <div className="mb-10">
                 <NavLink to="/dashboard">
@@ -41,21 +39,21 @@ const SideBar = () => {
                   <MdMic /> New Recording
                 </NavLink>
                 <NavLink
-                  to="Settings"
+                  to="/settings"
                   className="flex items-center gap-2"
                   style={navStyle}
                 >
-                  <MdSettings /> Setting
+                  <MdSettings /> Settings
                 </NavLink>
               </div>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 border-t h-15 border-white/15">
               <img className="w-7 h-7 rounded-full object-contain" src={user?.photoURL}/>
               <p className="font-semibold text-sm">{user?.displayName}</p>
             </div>
           </div>
         </div>
-        <div className="col-span-9 lg:col-span-10 p-4">
+        <div className="col-span-9 lg:col-span-10 p-5">
           <Outlet />
         </div>
       </div>

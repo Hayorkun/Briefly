@@ -1,2 +1,34 @@
+.glow {
+  animation: glow 12s ease-in-out infinite;
+}
+.glow-reverse {
 
+  animation: glowReverse 15s ease-in-out infinite;
 
+}
+
+@keyframes glow {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(350px, 150px);
+  }
+}
+
+@keyframes glowReverse {
+
+  0%, 100% {
+
+    transform: translate(0, 0);
+
+  }
+
+  50% {
+
+    transform: translate(-350px, -150px);
+
+  }
+
+}

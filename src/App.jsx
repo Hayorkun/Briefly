@@ -3,11 +3,16 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Landing from "./pages/Landing";
 import { AuthProvider } from "./context/AuthContext";
 import ProtectedRoute from "./component/ProtectedRoutes";
-import Dashboard from "./pages/Dashboard";
+import SideBar from "./component/SideBar";
 import DashboardInfo from "./component/DashboardInfo";
-
-// import Recording from './pages/Recording'
-// import MeetingDetail from './pages/MeetingDetail'
+import NewRecording from "./component/NewRecording";
+import SettingsDetails from "./component/SettingsDetails";
+import SigninPage from "./pages/SigninPage";
+import MeetingDetails from "./component/MeetingDetails";
+import { Navigate } from "react-router-dom";
+import MeetingSummary from "./component/MeetingSummary";
+import MeetingAction from "./component/MeetingAction";
+import MeetingTranscript from "./component/MeetingTranscript";
 
 export default function App() {
   return (
@@ -15,9 +20,18 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Landing />} />
+          <Route path="/signinpage" element={<SigninPage />} />
           <Route element={<ProtectedRoute />}>
-            <Route path="/dashboard" element={<Dashboard />}>
-              <Route index element={<DashboardInfo />} />
+            <Route element={<SideBar />}>
+              <Route path="/dashboard" element={<DashboardInfo />} />
+              <Route path="/recording" element={<NewRecording />} />
+              <Route path="/settings" element={<SettingsDetails />} />
+              <Route path="/meeting/:meetingId" element={<MeetingDetails />}>
+                <Route index element={<Navigate to="summary" replace />} />
+                <Route path="summary" element={<MeetingSummary />} />
+                <Route path="action" element={<MeetingAction />} />
+                <Route path="transcript" element={<MeetingTranscript />} />
+              </Route>
             </Route>
           </Route>
         </Routes>
