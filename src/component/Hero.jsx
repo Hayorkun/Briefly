@@ -12,8 +12,6 @@ const Hero = () => {
       await signInWithPopup(auth, provider);
       navigate("/dashboard");
 
-      
-
     } catch (error) {
       console.error("Sign in failed:", error);
     }

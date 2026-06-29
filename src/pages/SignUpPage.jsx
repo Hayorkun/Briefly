@@ -1,12 +1,12 @@
 
 import Navbar from '../component/Navbar'
-import SignIn from '../component/SignIn'
+import SignUp from '../component/SignUp'
 
 const SigninPage = () => {
   return (
     <>
       <Navbar/>
-      <SignIn/>
+      <SignUp/>
     </>
   )
 }
