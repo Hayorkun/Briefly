@@ -5,12 +5,13 @@ const BackButton = () => {
   const navigate = useNavigate();
 
   return (
-  <button 
-  className="flex text-sm text-white/50 items-center"
-  onClick={() => navigate(-1)}>
-     <ArrowLeft className="size-4"/> Back
-  </button>
-  )
+    <button
+      className="flex text-sm text-white/50 items-center mb-5"
+      onClick={() => navigate("/dashboard")}
+    >
+      <ArrowLeft className="size-4" /> Back
+    </button>
+  );
 };
 
 export default BackButton;

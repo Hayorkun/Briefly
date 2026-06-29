@@ -77,7 +77,7 @@ const NewRecording = () => {
               name="meetingTitle"
               value={meetingName}
               onChange={handleChange}
-              className="bg-white/10 py-2 px-2 font-semibold w-full text-sm rounded-sm "
+              className="bg-white/10 py-2 px-2 font-semibold w-full text-sm rounded-sm outline-none focus:ring-1 focus:ring-teal-400/50"
               placeholder="e.g Q3 planning sync"
             />
           </div>
